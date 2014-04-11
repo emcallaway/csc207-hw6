@@ -1,34 +1,32 @@
 package edu.grinnell.callaway;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class ImprovedArrayBasedQueue<T>
-    extends
-      ArrayBasedQueue<T>
+    extends ArrayBasedQueue<T>
 {
 
   /*
    * Fields
    */
-  
-  
-  int back;    //index of the last element currently in the queue
 
-  
+  int back; //index of the last element currently in the queue
+
   /*
    * Constructors
    */
-  
-  
+
   public ImprovedArrayBasedQueue(int capacity) throws Exception
   {
     super(capacity);
     this.back = 0;
   } // ImprovedArrayBasedQueue(int capacity)
 
-  
   /*
    * Methods
    */
-  
+
   @Override
   /**
    * Determine whether the queue is full
@@ -111,4 +109,62 @@ public class ImprovedArrayBasedQueue<T>
     else
       return this.back++;
   } // back()
+
+  /*
+   * Iterator
+   */
+  class ImprovedArrayBasedQueueIterator<T>
+      implements Iterator<T>
+  {
+    // +--------+----------------------------------------------------------
+    // | Fields |
+    // +--------+
+
+    T[] values;
+    int size;
+    int pos;
+    
+    // +--------------+----------------------------------------------------
+    // | Constructors |
+    // +--------------+
+
+    /**
+     * Create a new iterator.
+     */
+
+    public ImprovedArrayBasedQueueIterator(ImprovedArrayBasedQueue<T> q)
+    {
+      this.pos = ImprovedArrayBasedQueue.this.front;
+      
+    } // ImprovedArrayBasedQueueIterator
+
+    // +---------+---------------------------------------------------------
+    // | Methods |
+    // +---------+
+
+    @Override
+    public T next()
+      throws NoSuchElementException
+    {
+      if (!this.hasNext())
+        {
+          throw new NoSuchElementException("no elements remain");
+        } // if no elements 
+      
+      throw new NoSuchElementException("unimplemented");
+    } // next()
+
+    @Override
+    public boolean hasNext()
+    {
+      return this. != ;
+    } // hasNext()
+
+    @Override
+    public void remove()
+      throws UnsupportedOperationException
+    {
+      throw new UnsupportedOperationException();
+    } // remove()
+  } // ImprovedArrayBasedQueueIterator<T>
 } // class ImprovedArrayBasedQueue
