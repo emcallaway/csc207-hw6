@@ -1,3 +1,4 @@
+
 package edu.grinnell.callaway;
 
 
@@ -34,6 +35,8 @@ public class ImprovedArrBasedQueueExpt
     expt.get();
     expt.isFull();
     expt.put("x");
+    expt.peek();
+    expt.get();
     expt.peek();
     expt.get();
     expt.peek();
@@ -79,4 +82,4 @@ LSExpt.expt01(new ArrayBasedQueue<String>(8), "size08.");
 LSExpt.expt01(new ArrayBasedQueue<String>(4), "size04.");
 */
   } // main(String[])
-} // class ArrayBasedQueueExpt
+} // class ArrayBasedQueueExpt 
