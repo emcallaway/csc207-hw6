@@ -12,11 +12,17 @@ public class ImprovedArrayBasedQueue<T>
     this.back = 0;
   } // ImprovedArrayBasedQueue(int capacity)
   
+  @Override
+  public boolean isEmpty()
+  {
+    return this.size <= 0;
+  } // isEmpty()
   
   @Override
   public boolean isFull()
   {
-    return (!super.isEmpty() && this.front != this.back);
+    return false;
+  //  return !this.isEmpty() && this.front == this.back;
   } // isFull()
   
   @Override
@@ -30,8 +36,9 @@ public class ImprovedArrayBasedQueue<T>
         } // this.isFull()
      
       this.values[this.back()] = val;
-      ++this.size;
-      
+      this.size++;
+ //     System.out.println("S: " + this.size);
+//      System.out.println("B: " + this.back);
     }
   
   @Override
@@ -45,7 +52,7 @@ public class ImprovedArrayBasedQueue<T>
         // Grab and clear the element at the front of the queue
         T result = this.values[this.front];
         this.values[this.front] = null;
-        this.front = (this.front+1)% this.size;
+        this.front = (this.front+1)% this.values.length;
         // We're removing an element, so decrement the size
         --this.size;
         // And we're done
@@ -60,16 +67,19 @@ public class ImprovedArrayBasedQueue<T>
       {
         throw new Exception("empty");
       } // if empty
-    System.out.println("F: " + this.front);
+//    System.out.println("F: " + this.front);
     return this.values[this.front];
   } // peek()
+  
   @Override
   int back()
   {
-    if (this.size >0)
-      this.back = (this.back + 1) % this.size;
-  //  else this.back++;
-    System.out.println(this.back);
-    return this.back;
+   // System.out.println("L: " + this.values.length);
+    if (this.back == this.values.length)
+      { 
+        this.back = 0;
+        return this.back;
+      }
+    else return this.back++;
   } // back()
 }
