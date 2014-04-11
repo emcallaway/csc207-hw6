@@ -14,12 +14,6 @@ public class ImprovedArrayBasedQueue<T>
   } // ImprovedArrayBasedQueue(int capacity)
 
   @Override
-  public boolean isEmpty()
-  {
-    return this.size <= 0;
-  } // isEmpty()
-
-  @Override
   public boolean isFull()
   {
     return !this.isEmpty() && this.front == ((this.back) % this.values.length);
