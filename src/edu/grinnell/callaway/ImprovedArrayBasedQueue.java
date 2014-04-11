@@ -5,21 +5,45 @@ public class ImprovedArrayBasedQueue<T>
       ArrayBasedQueue<T>
 {
 
-  int back;
+  /*
+   * Fields
+   */
+  
+  
+  int back;    //index of the last element currently in the queue
 
+  
+  /*
+   * Constructors
+   */
+  
+  
   public ImprovedArrayBasedQueue(int capacity) throws Exception
   {
     super(capacity);
     this.back = 0;
   } // ImprovedArrayBasedQueue(int capacity)
 
+  
+  /*
+   * Methods
+   */
+  
   @Override
+  /**
+   * Determine whether the queue is full
+   */
   public boolean isFull()
   {
     return !this.isEmpty() && this.front == ((this.back) % this.values.length);
   } // isFull()
 
   @Override
+  /**
+   * Insert a value in the queue in the next available index
+   * 
+   * Throws Exception if queue is full
+   */
   public void put(T val)
     throws Exception
   {
@@ -27,13 +51,16 @@ public class ImprovedArrayBasedQueue<T>
     if (this.isFull())
       {
         throw new Exception("no more room!");
-      } // this.isFull()
+      } // if(this.isFull())
 
     this.values[this.back()] = val;
     this.size++;
   } // put()
 
   @Override
+  /**
+   * Retrieve, erase, and return the current value in the queue.
+   */
   public T get()
     throws Exception
   {
@@ -53,6 +80,9 @@ public class ImprovedArrayBasedQueue<T>
   } // get()
 
   @Override
+  /**
+   * See which element will be next returned by get().
+   */
   public T peek()
     throws Exception
   {
@@ -63,6 +93,9 @@ public class ImprovedArrayBasedQueue<T>
     return this.values[this.front];
   } // peek()
 
+  /*
+   * Helper Methods
+   */
   @Override
   /**
    * Figure out where the next element should go and advance to the
@@ -74,7 +107,7 @@ public class ImprovedArrayBasedQueue<T>
       {
         this.back = 0;
         return this.values.length - 1;
-      } // if
+      } // if back is at the end of the queue
     else
       return this.back++;
   } // back()
