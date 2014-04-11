@@ -1,9 +1,13 @@
 package edu.grinnell.callaway;
 
+import edu.grinnell.callaway.ArrayBasedQueue;
+import edu.grinnell.callaway.ImprovedArrayBasedQueue;
+import edu.grinnell.callaway.ReportingLinearStructure;
+
 public class ImprovedArrayBasedQueue<T>
   extends ArrayBasedQueue<T>
 {
-  
+ 
   int back;
 
   public ImprovedArrayBasedQueue(int capacity) throws Exception
@@ -11,19 +15,19 @@ public class ImprovedArrayBasedQueue<T>
     super(capacity);
     this.back = 0;
   } // ImprovedArrayBasedQueue(int capacity)
-  
+ 
   @Override
   public boolean isEmpty()
   {
     return this.size <= 0;
   } // isEmpty()
-  
+ 
   @Override
   public boolean isFull()
   {
     return !this.isEmpty() && this.front == ((this.back)% this.values.length);
   } // isFull()
-  
+ 
   @Override
   public void put(T val)
       throws Exception
@@ -37,7 +41,7 @@ public class ImprovedArrayBasedQueue<T>
       this.values[this.back()] = val;
       this.size++;
     }
-  
+ 
   @Override
   public T get()
       throws Exception
@@ -67,12 +71,12 @@ public class ImprovedArrayBasedQueue<T>
       } // if empty
     return this.values[this.front];
   } // peek()
-  
+ 
   @Override
   int back()
   {
     if (this.back == this.values.length)
-      { 
+      {
         this.back = 0;
         return this.back;
       }
