@@ -41,45 +41,8 @@ public class ImprovedArrBasedQueueExpt
     expt.get();
     expt.peek();
     expt.get();
-    // We've put and remove dthe same number of elements, it
-    // should be empty
     expt.isEmpty();
     expt.isFull();
 
-    /*
-// It's always good to see what happens after you've cleared
-// out a structure. So add a few more elements.
-// We'll leave this test until we've worked out some kinks (Dave?)
-expt.put("e");
-expt.peek();
-expt.put("f");
-expt.get();
-expt.peek();
-expt.put("g");
-expt.get();
-expt.get();
-// And we're back down to the empty queue
-expt.isEmpty();
-*/
-
-    /*
-// An iteration test, once we've workd out some kinks (Ray?)
-expt.put("a");
-expt.put("b");
-expt.put("c");
-for (String s : expt) {
-System.out.println(s);
-} // for
-expt.get();
-expt.get();
-expt.get();
-*/
-
-    /*
-// Future tests, once we've worked out some more kinks (Pete
-// and Mick?)
-LSExpt.expt01(new ArrayBasedQueue<String>(8), "size08.");
-LSExpt.expt01(new ArrayBasedQueue<String>(4), "size04.");
-*/
   } // main(String[])
 } // class ArrayBasedQueueExpt 
