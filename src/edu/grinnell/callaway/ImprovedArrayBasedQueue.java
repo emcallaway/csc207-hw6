@@ -31,7 +31,7 @@ public class ImprovedArrayBasedQueue<T>
      
       this.values[this.back()] = val;
       ++this.size;
-      
+      System.out.println("Front = " + this.front);
     }
   
   @Override
@@ -46,6 +46,7 @@ public class ImprovedArrayBasedQueue<T>
         T result = this.values[this.front];
         this.values[this.front] = null;
         this.front = (this.front+1)% this.size;
+        System.out.println("Front = " + this.front);
         // We're removing an element, so decrement the size
         --this.size;
         // And we're done
@@ -66,10 +67,22 @@ public class ImprovedArrayBasedQueue<T>
   @Override
   int back()
   {
-    if (this.size >0)
-      this.back = (this.back + 1) % this.size;
-  //  else this.back++;
-    System.out.println(this.back);
+    if (this.values.length == this.back)
+      {
+        this.back = 0;
+        int i = 0;
+        while(this.values[i] != null);
+        {
+          this.back++;
+          i++;
+        }//while
+      }//if back is the end of the queue
+    /*else
+      {
+        this.back++;
+      }//else
+    */
+    System.out.println("back = " + this.back);
     return this.back;
   } // back()
 }
