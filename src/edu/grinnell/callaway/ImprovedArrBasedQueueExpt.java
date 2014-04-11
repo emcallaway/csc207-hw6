@@ -38,6 +38,8 @@ public class ImprovedArrBasedQueueExpt
     expt.get();
     expt.peek();
     expt.get();
+    expt.peek();
+    expt.get();
     // We've put and remove dthe same number of elements, it
     // should be empty
     expt.isEmpty();
