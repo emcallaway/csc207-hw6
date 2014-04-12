@@ -121,7 +121,6 @@ public class ImprovedArrayBasedQueue<T>
     // +--------+
 
     T[] values;
-    int size;
     int pos;
     
     // +--------------+----------------------------------------------------
@@ -136,7 +135,6 @@ public class ImprovedArrayBasedQueue<T>
     {
       this.pos = q.front;
       this.values = q.values;
-      this.size = q.size;
     } // ImprovedArrayBasedQueueIterator
 
     // +---------+---------------------------------------------------------
@@ -144,6 +142,9 @@ public class ImprovedArrayBasedQueue<T>
     // +---------+
 
     @Override
+    /**
+     * Return the current element
+     */
     public T next()
       throws NoSuchElementException
     {
@@ -151,18 +152,30 @@ public class ImprovedArrayBasedQueue<T>
         {
           throw new NoSuchElementException("no elements remain");
         } // if no elements 
-      T next = this.values[pos];
-      //IN PROGRESSif()
+      T next;
+      if(this.pos == this.values.length)
+        {
+          this.pos = 0;
+          next = this.values[this.values.length-1];
+        }// if the queue is wrapped around
+      next = this.values[pos];
+      pos++;
       return next;
     } // next()
 
     @Override
+    /**
+     * Check if there are any further elements in the queue
+     */
     public boolean hasNext()
     {
       return this.pos != ImprovedArrayBasedQueue.this.back;
     } // hasNext()
 
     @Override
+    /**
+     * Unsupported
+     */
     public void remove()
       throws UnsupportedOperationException
     {

@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 
 public class RPNViewer
 {
-  
   /**
    * Print the current item in the stack
    * 
