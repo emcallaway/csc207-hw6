@@ -58,4 +58,4 @@ public class RPNCalculator
   {
     return BigDecimal.valueOf(Double.valueOf(num));
   }//getBD(String)
-}
+}//class RPNCalculator
