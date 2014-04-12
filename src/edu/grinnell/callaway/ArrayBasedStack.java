@@ -5,12 +5,13 @@ import java.util.NoSuchElementException;
 
 /**
  * A simple array-based stack.
- *
+ * 
  * @author Samuel A. Rebelsky
  * @author Your Name Here
  */
 public class ArrayBasedStack<T>
-    implements Stack<T>
+    implements
+      Stack<T>
 {
   // +--------+----------------------------------------------------------
   // | Fields |
@@ -117,7 +118,8 @@ public class ArrayBasedStack<T>
 } // ArrayBasedStack<T>
 
 class ArrayBasedStackIterator<T>
-    implements Iterator<T>
+    implements
+      Iterator<T>
 {
   // +--------+----------------------------------------------------------
   // | Fields |
@@ -157,7 +159,7 @@ class ArrayBasedStackIterator<T>
     if (!this.hasNext())
       {
         throw new NoSuchElementException("no elements remain");
-      } // if no elements 
+      } // if no elements
     return this.values[--i];
   } // next()
 

@@ -5,30 +5,31 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 
 /**
-* LinearStructures that report on the operations they perform.
-*
-* @author Samuel A. Rebelsky
-*/
+ * LinearStructures that report on the operations they perform.
+ * 
+ * @author Samuel A. Rebelsky
+ */
 public class ReportingLinearStructure<T>
-    implements LinearStructure<T>
+    implements
+      LinearStructure<T>
 {
   // +--------+----------------------------------------------------------
   // | Fields |
   // +--------+
 
   /**
-* The underlying structure we're using for an experiment.
-*/
+   * The underlying structure we're using for an experiment.
+   */
   LinearStructure<T> ls;
 
   /**
-* The PrintWriter we use to generate output.
-*/
+   * The PrintWriter we use to generate output.
+   */
   PrintWriter pen;
 
   /**
-* The prefix used for output.
-*/
+   * The prefix used for output.
+   */
   String prefix;
 
   // +--------------+----------------------------------------------------
@@ -36,9 +37,9 @@ public class ReportingLinearStructure<T>
   // +--------------+
 
   /**
-* Build a new experiment that uses ls to do the work and prints
-* comments using pen, prefixed by prefix.
-*/
+   * Build a new experiment that uses ls to do the work and prints comments
+   * using pen, prefixed by prefix.
+   */
   public ReportingLinearStructure(LinearStructure<T> ls, PrintWriter pen,
                                   String prefix)
   {
@@ -48,18 +49,18 @@ public class ReportingLinearStructure<T>
   } // ReportingLinearStructure(LinearStructure<T>, PrintWriter)
 
   /**
-* Build a new experiment that uses ls to do the real work and
-* prints comments to stdout using the specified prefix.
-*/
+   * Build a new experiment that uses ls to do the real work and prints comments
+   * to stdout using the specified prefix.
+   */
   public ReportingLinearStructure(LinearStructure<T> ls, String prefix)
   {
     this(ls, new PrintWriter(System.out, true), prefix);
   } // ReportingLinearStructure(LinearStructure<T>)
 
   /**
-* Build a new experiment that uses ls to do the real work and
-* prints comments to stdout using no prefix.
-*/
+   * Build a new experiment that uses ls to do the real work and prints comments
+   * to stdout using no prefix.
+   */
   public ReportingLinearStructure(LinearStructure<T> ls)
   {
     this(ls, new PrintWriter(System.out, true), "");
@@ -138,8 +139,8 @@ public class ReportingLinearStructure<T>
   } // isFull()
 
   /**
-* Build an iterator for the structure.
-*/
+   * Build an iterator for the structure.
+   */
   public Iterator<T> iterator()
   {
     return ls.iterator();
@@ -150,8 +151,8 @@ public class ReportingLinearStructure<T>
   // +--------------------+
 
   /**
-* Print info on the structure.
-*/
+   * Print info on the structure.
+   */
   public void info()
   {
     this.isEmpty();
@@ -172,9 +173,8 @@ public class ReportingLinearStructure<T>
   } // dump
 
   /**
-* Remove all of the elements in the structure, printing them out
-* as we go.
-*/
+   * Remove all of the elements in the structure, printing them out as we go.
+   */
   public void clear()
   {
     pen.println(prefix + "<clearing>");

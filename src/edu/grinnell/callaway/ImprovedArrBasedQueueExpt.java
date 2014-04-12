@@ -1,22 +1,22 @@
-
 package edu.grinnell.callaway;
 
-
 /**
-* A really simple experiment with ArrayBasedQueues.
-*
-* @author Samuel A. Rebelsky.
-*/
+ * A really simple experiment with ArrayBasedQueues.
+ * 
+ * @author Samuel A. Rebelsky.
+ */
 public class ImprovedArrBasedQueueExpt
 {
   /**
-* Do all the work. (Well, make the helpers do all the work.)
-*/
+   * Do all the work. (Well, make the helpers do all the work.)
+   */
   public static void main(String[] args)
     throws Exception
   {
     ReportingLinearStructure<String> expt =
-        new ReportingLinearStructure<String>(new ImprovedArrayBasedQueue<String>(3),
+        new ReportingLinearStructure<String>(
+                                             new ImprovedArrayBasedQueue<String>(
+                                                                                 3),
                                              "expt.");
     // Put in a few values, then remove two
     expt.isEmpty();
@@ -45,4 +45,4 @@ public class ImprovedArrBasedQueueExpt
     expt.isFull();
 
   } // main(String[])
-} // class ArrayBasedQueueExpt 
+} // class ArrayBasedQueueExpt

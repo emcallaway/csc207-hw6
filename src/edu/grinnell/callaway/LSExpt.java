@@ -5,11 +5,11 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 
 /**
-* Experiments with LinearStructures.
-*
-* @author Samuel A. Rebelsky
-* @author Your Name Here
-*/
+ * Experiments with LinearStructures.
+ * 
+ * @author Samuel A. Rebelsky
+ * @author Your Name Here
+ */
 public class LSExpt
 {
   // +----------------+--------------------------------------------------
@@ -17,8 +17,8 @@ public class LSExpt
   // +----------------+
 
   /**
-* A series of experiments on a structure of strings.
-*/
+   * A series of experiments on a structure of strings.
+   */
   public static void expt01(LinearStructure<String> ls, String prefix)
     throws Exception
   {

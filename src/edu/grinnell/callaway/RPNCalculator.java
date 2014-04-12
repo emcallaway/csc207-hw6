@@ -38,15 +38,15 @@ public class RPNCalculator
           long exp = Long.valueOf(stack.pop());
           BigDecimal fin = getBD("1");
           BigDecimal num = getBD(stack.pop());
-          for (long i = 0; i<exp; i++)
+          for (long i = 0; i < exp; i++)
             {
               fin = fin.multiply(num);
-            }//for
+            }// for
           stack.push(String.valueOf(fin));
           break;
-      }//switch
+      }// switch
     return stack;
-  }//calculate(ArrayBasedString<T>)
+  }// calculate(ArrayBasedString<T>)
 
   /**
    * Convert a String to a BigDecimal for calculations
@@ -57,5 +57,5 @@ public class RPNCalculator
   public BigDecimal getBD(String num)
   {
     return BigDecimal.valueOf(Double.valueOf(num));
-  }//getBD(String)
-}//class RPNCalculator
+  }// getBD(String)
+}// class RPNCalculator
