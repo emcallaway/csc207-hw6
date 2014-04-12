@@ -152,7 +152,7 @@ public class ImprovedArrayBasedQueue<T>
           throw new NoSuchElementException("no elements remain");
         } // if no elements 
       T next = this.values[pos];
-      if()
+      //IN PROGRESSif()
       return next;
     } // next()
 

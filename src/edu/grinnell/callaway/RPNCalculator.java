@@ -5,6 +5,12 @@ import java.math.BigDecimal;
 public class RPNCalculator
 {
 
+  /**
+   * Calculator for RPN
+   * 
+   * @param stack
+   * @throws Exception
+   */
   public ArrayBasedStack<String> calculate(ArrayBasedStack<String> stack)
     throws Exception
   {
@@ -35,15 +41,21 @@ public class RPNCalculator
           for (long i = 0; i<exp; i++)
             {
               fin = fin.multiply(num);
-            }
+            }//for
           stack.push(String.valueOf(fin));
           break;
-      }
+      }//switch
     return stack;
-  }
+  }//calculate(ArrayBasedString<T>)
 
+  /**
+   * Convert a String to a BigDecimal for calculations
+   * 
+   * @param num
+   * @return numBD, a BigDecimal
+   */
   public BigDecimal getBD(String num)
   {
     return BigDecimal.valueOf(Double.valueOf(num));
-  }
+  }//getBD(String)
 }
