@@ -4,14 +4,15 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class ImprovedArrayBasedQueue<T>
-    extends ArrayBasedQueue<T>
+    extends
+      ArrayBasedQueue<T>
 {
 
   /*
    * Fields
    */
 
-  int back; //index of the last element currently in the queue
+  int back; // index of the last element currently in the queue
 
   /*
    * Constructors
@@ -114,7 +115,8 @@ public class ImprovedArrayBasedQueue<T>
    * Iterator
    */
   class ImprovedArrayBasedQueueIterator<T>
-      implements Iterator<T>
+      implements
+        Iterator<T>
   {
     // +--------+----------------------------------------------------------
     // | Fields |
@@ -122,7 +124,7 @@ public class ImprovedArrayBasedQueue<T>
 
     T[] values;
     int pos;
-    
+
     // +--------------+----------------------------------------------------
     // | Constructors |
     // +--------------+
@@ -151,12 +153,12 @@ public class ImprovedArrayBasedQueue<T>
       if (!this.hasNext())
         {
           throw new NoSuchElementException("no elements remain");
-        } // if no elements 
+        } // if no elements
       T next;
-      if(this.pos == this.values.length)
+      if (this.pos == this.values.length)
         {
           this.pos = 0;
-          next = this.values[this.values.length-1];
+          next = this.values[this.values.length - 1];
         }// if the queue is wrapped around
       next = this.values[pos];
       pos++;

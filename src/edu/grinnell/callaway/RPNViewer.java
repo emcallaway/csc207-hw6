@@ -20,15 +20,14 @@ public class RPNViewer
     stack.pop();
     pen.print(stack.peek() + "\n");
     pen.flush();
-  }//printTop(ArrayBasedStack<String>)
+  }// printTop(ArrayBasedStack<String>)
 
   /**
    * Print the entire stack
-   *
+   * 
    * @precondition stack before command is not empty
-   * @postcondition prints entire stack, 
-   *                   minus the command to print
-   *                   
+   * @postcondition prints entire stack, minus the command to print
+   * 
    * @param stack
    * @throws Exception
    */
@@ -38,15 +37,15 @@ public class RPNViewer
     PrintWriter pen = new PrintWriter(System.out, true);
     stack.pop();
     int size = stack.size;
-   
+
     while (!stack.isEmpty())
       {
         pen.print(stack.pop() + "\n");
-      }//while
+      }// while
     pen.flush();
-    stack.size =size;
-  }//printAll(ArrayBasedStack<String>)
-  
+    stack.size = size;
+  }// printAll(ArrayBasedStack<String>)
+
   /**
    * Clear the stack
    * 
@@ -54,8 +53,8 @@ public class RPNViewer
    * @throws Exception
    */
   public void clear(ArrayBasedStack<String> stack)
-      throws Exception
-    {
-      stack.size = 0;
-    }//clear(ArrayBasedStack<String>)
-}//class RPNViewer
+    throws Exception
+  {
+    stack.size = 0;
+  }// clear(ArrayBasedStack<String>)
+}// class RPNViewer
