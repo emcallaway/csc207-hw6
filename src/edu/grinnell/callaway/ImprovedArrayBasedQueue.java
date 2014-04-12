@@ -134,8 +134,9 @@ public class ImprovedArrayBasedQueue<T>
 
     public ImprovedArrayBasedQueueIterator(ImprovedArrayBasedQueue<T> q)
     {
-      this.pos = ImprovedArrayBasedQueue.this.front;
-      
+      this.pos = q.front;
+      this.values = q.values;
+      this.size = q.size;
     } // ImprovedArrayBasedQueueIterator
 
     // +---------+---------------------------------------------------------
@@ -150,14 +151,15 @@ public class ImprovedArrayBasedQueue<T>
         {
           throw new NoSuchElementException("no elements remain");
         } // if no elements 
-      
-      throw new NoSuchElementException("unimplemented");
+      T next = this.values[pos];
+      if()
+      return next;
     } // next()
 
     @Override
     public boolean hasNext()
     {
-      return this. != ;
+      return this.pos != ImprovedArrayBasedQueue.this.back;
     } // hasNext()
 
     @Override
